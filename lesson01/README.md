@@ -1,7 +1,8 @@
-~# uname -p
-x86_64
+Проверяю версию:
 ~# uname -r
 6.8.0-55-generic
+~# uname -p
+x86_64
 
     3  mkdir kernel && cd kernel
     4  wget https://kernel.ubuntu.com/mainline/v6.13.7/amd64/linux-headers-6.13.7-061307-generic_6.13.7-061307.202503131244_amd64.deb
@@ -14,5 +15,6 @@ x86_64
    11  grub-set-default 0
    12  reboot
 
+Снова проверяю версию:
 uname -r
 6.13.7-061307-generic
