@@ -19,7 +19,6 @@ x86_64
 10  update-grub
 11  grub-set-default 0
 12  reboot
-```sh
 
 ## Снова проверяю версию ядра
 uname -r
