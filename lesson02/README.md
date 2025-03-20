@@ -1,6 +1,7 @@
 # Работа с mdadm
 
 ## Добавляю к ВМ 5 новых дисков
+```sh
 lshw -short | grep disk
 /0/100/1.1/0.0.0    /dev/cdrom  disk           QEMU DVD-ROM
 /0/100/1.1/0.0.0/0  /dev/cdrom  disk
