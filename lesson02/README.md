@@ -3,6 +3,7 @@
 ```sh
 
 ## Добавляю к ВМ 5 новых дисков
+
 lshw -short | grep disk
 /0/100/1.1/0.0.0    /dev/cdrom  disk           QEMU DVD-ROM
 /0/100/1.1/0.0.0/0  /dev/cdrom  disk
@@ -55,7 +56,7 @@ md0 : active raid6 sdf[4] sde[3] sdd[2] sdc[1] sdb[0]
 
    28  mdadm /dev/md0 --add /dev/sde
 
-## Созда. GPT таблицу, пять разделов и монтирую их в системе
+## Создаю GPT таблицу, пять разделов и монтирую их в системе
 
    31  parted -s /dev/md0 mklabel gpt
    32  parted /dev/md0 mkpart primary ext4 0% 20%
@@ -66,6 +67,8 @@ md0 : active raid6 sdf[4] sde[3] sdd[2] sdc[1] sdb[0]
    37  for i in $(seq 1 5); do sudo mkfs.ext4 /dev/md0p$i; done
    38  mkdir -p /raid/part{1,2,3,4,5}
    39  for i in $(seq 1 5); do mount /dev/md0p$i /raid/part$i; done
+
+## Проверяю
 
 df -h
 Filesystem      Size  Used Avail Use% Mounted on
